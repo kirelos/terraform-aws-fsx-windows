@@ -19,6 +19,8 @@ Use this module to create a FSx for Windows in AWS.
 | tags | A map of tags to assign to the file system. | `map` | `null` | no |
 | throughput\_capacity | Throughput (megabytes per second) of the file system in power of 2 increments. Minimum of 8 and maximum of 2048. | `any` | n/a | yes |
 | weekly\_maintenance\_start\_time | The preferred start time (in d:HH:MM format) to perform weekly maintenance, in the UTC time zone. | `any` | `null` | no |
+| security\_group\_enabled | Whether to create default Security Group for EFS. | `bool` | `true` | no |
+| security\_group\_use\_name\_prefix | Whether to create a default Security Group with unique name beginning with the normalized prefix. | `bool` | `false` | no |
 
 ## Outputs
 
@@ -27,3 +29,6 @@ Use this module to create a FSx for Windows in AWS.
 | arn | Amazon Resource Name of the file system. |
 | dns\_name | DNS name for the file system, e.g. fs-12345678.corp.example.com (domain name matching the Active Directory domain name) |
 | id | Identifier of the file system, e.g. fs-12345678 |
+| security_group_arn | FSX Security Group ARN |
+| security_group_id | FSX Security Group ID |
+| security_group_name | FSX Security Group name |
